@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+	font-size: 50px;
+}
+.box{
+	width: 300px;
+	height: 200px;
+	/*border: 1px solid aqua;*/
+	background: url('../images/沙发.jpg');
+	background-size: cover;
+}
+
+.bb2{
+	width: 300px;
+	height: 200px;
+	/*border: 1px solid aqua;*/
+	background: url('../images2/沙发.jpg');
+	background-size: cover;
+}
