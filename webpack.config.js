@@ -16,7 +16,8 @@ module.exports = {
 		open:true,
 		port:9527,
 		contentBase:'src',
-		hot:true
+		hot:true,
+		host:'192.168.1.244'
 	},
 	plugins:[
 		new webpack.HotModuleReplacementPlugin(),
@@ -35,7 +36,8 @@ module.exports = {
 			// 默认图片显示为base64
 			// {test:/\.(jpg|png|jpeg|svg|bmp|gif$)/,use:['url-loader']}
 			{test:/\.(jpg|png|jpeg|svg|bmp|gif$)/,use:['url-loader?limit=3000&name=[hash:8]--[name].[ext]']},
-			{test:/\.vue$/,use:'vue-loader'}
+			{test:/\.vue$/,use:'vue-loader'},
+			{test:/\.(ttf|eot|svg|woff|woff2)$/,use:'url-loader'}
 		]
 	}
 }

@@ -1,22 +1,30 @@
 import Vue from 'vue'
 
 import VueRouter from 'vue-router'
-// 手动安装 VueRouter
 Vue.use(VueRouter)
 
-// 导入自定义的app组件
-import app from './app.vue'
 
-// 导入自定义路由模块
+// 导入nintui样式文件
+import 'mint-ui/lib/style.min.css'
+
+
+// 导入mui样式文件
+// import './lib/mui/css/mui.min.css'
+
+import './lib/mui/css/mui.css'
+// 导入app.vue
+import app from './app.vue'
+// 导入自定义路由文件
 import router from './routes.js'
 
-var vm =new Vue({
+// 按需导入
+import { Header } from 'mint-ui'
+Vue.component(Header.name, Header);
+
+// 创建vue实例
+new Vue({
 	el:'#app',
+	data:{},
 	render:c=>c(app),
 	router
 })
-
-/*注意：app这个组件，是通过vue实例的render函数渲染出来的，这个函数要渲染
-组件，那么只能放到el:'#app'所指定的元素中*/
-
-// content1 和content2组件，是通过路由匹配到的，所以只能展示在属于路由的routes-view中
